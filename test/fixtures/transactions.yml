@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  debits: 1.5
+  credits: 1.5
+  number_of_transactions: 1
+  total_money: 1.5
+
+two:
+  debits: 1.5
+  credits: 1.5
+  number_of_transactions: 1
+  total_money: 1.5
