@@ -5,6 +5,8 @@ class TransactionsController < ApplicationController
   # GET /transactions.json
   def index
     @transactions = Transaction.all
+    @total_money = Transaction.total
+    @number_of_transactions = @transactions.length
   end
 
   # GET /transactions/1
@@ -71,4 +73,6 @@ class TransactionsController < ApplicationController
     def transaction_params
       params.require(:transaction).permit(:debits, :credits, :number_of_transactions, :total_money)
     end
+  #  @test_variable = Record.distinct.count('debits')
+
 end
