@@ -7,6 +7,9 @@ class TransactionsController < ApplicationController
     @transactions = Transaction.all
     @total_money = Transaction.total
     @number_of_transactions = @transactions.length
+    if @total_money < 0
+      @alert = "YOUR BALANCE IS NEGATIVE"
+    end
   end
 
   # GET /transactions/1
