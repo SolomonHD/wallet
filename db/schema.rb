@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150128194611) do
+ActiveRecord::Schema.define(version: 20150129145847) do
 
   create_table "accounts", force: :cascade do |t|
     t.float    "debits"
@@ -23,12 +23,13 @@ ActiveRecord::Schema.define(version: 20150128194611) do
   end
 
   create_table "transactions", force: :cascade do |t|
-    t.float    "debits"
-    t.float    "credits"
+    t.decimal  "debits",                 precision: 10, scale: 2
+    t.decimal  "credits",                precision: 10, scale: 2
     t.integer  "number_of_transactions"
     t.float    "total_money"
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.datetime "created_at",                                      null: false
+    t.datetime "updated_at",                                      null: false
+    t.date     "spent_on"
   end
 
 end
