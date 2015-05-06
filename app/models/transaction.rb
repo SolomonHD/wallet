@@ -1,6 +1,7 @@
 class Transaction < ActiveRecord::Base
 validates :debits ,presence: true,
 validates :credits, numericality: true, allow_nil:true
+
   def self.total
     total = 0
     Transaction.all.each do |t|
